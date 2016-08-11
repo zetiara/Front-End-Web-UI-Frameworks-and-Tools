@@ -69,7 +69,7 @@
                     <li><a href="contactus.html"><span class=" fa fa-envelope-o"></span> Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    <li><a id="loginButton"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                 </ul>
             </div>
         </div>
@@ -215,7 +215,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reservationModal" href="#reservation"></span>Reserve Table</a>
+                    <a id="reserveButton" type="button" class="btn btn-warning btn-block"></span>Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -403,7 +403,7 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#mycarousel").( { interval: 2000 } );
+            $("#mycarousel").carousel( { interval: 2000 } );
 
             $("#carousel-pause").click(function(){
                 $("#mycarousel").carousel('pause');
@@ -412,6 +412,15 @@
             $("#carousel-play").click(function(){
                 $('#mycarousel').carousel('cycle');
             });
+
+        });
+
+        $('#reserveButton').click(function(){
+            $('#reservationModal').modal('toggle');
+        });
+
+        $('#loginButton').click(function(){
+            $('#loginModal').modal('toggle');
         });
     </script>
 
